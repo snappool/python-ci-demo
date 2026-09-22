@@ -1,100 +1,49 @@
 # Python Learning Chatbot
 
-A RAG (Retrieval-Augmented Generation) chatbot that answers Python questions
-using a custom knowledge base. Built as a learning project to practice
-GitHub Actions CI/CD and AI application development.
+A RAG chatbot that answers Python questions using a custom knowledge base.
+Built to practice GitHub Actions CI/CD and AI application development.
 
 ## What It Does
 
-Ask the chatbot about Python concepts, and it answers **based on your own notes**
-— not from the model's general training. This reduces hallucinations and keeps
-answers grounded in the material you provide.
-
-Example:
-```
-Ask about Python (or type 'exit'): What is a list comprehension?
-
-Python list comprehensions provide a short, readable way to build a list
-in a single expression...
-```
+Answers Python questions **based on your own notes** (in `documents/`),
+not the model's general training. This keeps answers grounded and accurate.
 
 ## How It Works
 
 ```
-User question
-     ↓
-retrieve() searches documents/
-     ↓
-Finds the most relevant lines
-     ↓
-Sends question + context to Groq API
-     ↓
-Model answers grounded in the documents
+Question → retrieve() searches documents/ → sends context + question to Groq → answer
 ```
 
 ## Tech Stack
 
-- **Python 3.12**
-- **OpenAI SDK** (pointing at Groq's OpenAI-compatible endpoint)
-- **Groq API** — model: `openai/gpt-oss-120b`
-- **GitHub Actions** — CI pipeline runs tests on every push
-- **pytest** — test framework
-
-## Project Structure
-
-```
-python-ci-demo/
-├── .github/workflows/ci.yml   # CI pipeline
-├── documents/
-│   └── python_notes.txt        # Knowledge base
-├── chatbot.py                  # RAG chatbot
-├── requirements.txt
-├── test_sample.py
-└── README.md
-```
+- Python 3.12
+- OpenAI SDK (Groq's OpenAI-compatible endpoint)
+- Groq API — model: `openai/gpt-oss-120b`
+- GitHub Actions + pytest
 
 ## Setup
 
-1. Clone the repo:
-   ```bash
-   git clone https://github.com/snappool/python-ci-demo.git
-   cd python-ci-demo
-   ```
+```bash
+git clone https://github.com/snappool/python-ci-demo.git
+cd python-ci-demo
+pip install -r requirements.txt
+export GROQ_API_KEY=gsk_your_key_here
+python chatbot.py
+```
 
-2. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-3. Get a free Groq API key from https://console.groq.com
-
-4. Set it as an environment variable:
-   ```bash
-   export GROQ_API_KEY=gsk_your_key_here
-   ```
-
-5. Run the chatbot:
-   ```bash
-   python chatbot.py
-   ```
+Get a free Groq key at https://console.groq.com
 
 ## CI Pipeline
 
-Every push to `main` triggers GitHub Actions to:
-1. Spin up a fresh Ubuntu VM
-2. Install Python 3.10
-3. Install dependencies from `requirements.txt`
-4. Run tests with `pytest`
-
-A ✅ or ❌ appears next to each commit.
+Every push runs GitHub Actions: fresh Ubuntu VM → install Python → install deps → run pytest.
 
 ## What I Learned
 
-- Building a CI/CD pipeline with GitHub Actions
-- Writing workflows in YAML
+- GitHub Actions CI/CD
+- YAML workflows
 - Debugging failing CI runs
-- Implementing a basic RAG pipeline
-- Working with LLM APIs (Groq, OpenAI SDK)
+- RAG pipeline basics
+- LLM APIs (Groq, OpenAI SDK)
 - Managing secrets with environment variables
 
 ## License
