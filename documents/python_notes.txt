@@ -1,0 +1,8 @@
+Python list comprehension is a concise way to create lists.
+Example: squares = [x**2 for x in range(10)]
+
+A dictionary in Python stores key-value pairs.
+Example: person = {"name": "Ali", "age": 25}
+
+A function is defined with the def keyword.
+Example: def greet(name): return "Hello " + name
