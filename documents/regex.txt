@@ -1,0 +1,16 @@
+Regular expressions (regex) match patterns in text.
+Example: import re; re.findall(r"\d+", "a1b22c333")
+
+The re module is Python's regular expression library.
+Example: import re
+
+Use raw strings (r"...") for regex patterns.
+Example: r"\d+" is a raw string, "\d+" is not
+
+The . (dot) matches any character except a newline.
+Example: re.findall(r"a.c", "abc adc a c") gives ["abc", "adc"]
+
+The \d matches any digit (0-9).
+Example: re.findall(r"\d", "a1b2") gives ["1", "2"]
+
+
