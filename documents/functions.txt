@@ -1,0 +1,23 @@
+A function in Python is defined with the def keyword.
+Example: def greet(name): return "Hello " + name
+
+Functions can have default arguments.
+Example: def greet(name="World"): return "Hello " + name
+
+Functions can return multiple values as a tuple.
+Example: def min_max(nums): return min(nums), max(nums)
+
+The *args parameter lets a function accept any number of positional arguments.
+Example: def total(*nums): return sum(nums)
+
+The **kwargs parameter lets a function accept any number of keyword arguments.
+Example: def show(**data): print(data)
+
+A lambda is a small anonymous function defined in one line.
+Example: square = lambda x: x * x
+
+The map() function applies a function to every item in an iterable.
+Example: list(map(lambda x: x*2, [1,2,3])) gives [2, 4, 6]
+
+The filter() function keeps items where the function returns True.
+Example: list(filter(lambda x: x > 2, [1,2,3,4])) gives [3, 4]
