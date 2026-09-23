@@ -1,0 +1,137 @@
+The open() function opens a file and returns a file object.
+Example: f = open("data.txt")
+
+The first argument to open() is the file path.
+Example: open("folder/data.txt")
+
+The second argument is the mode: "r", "w", "a", or "b".
+Example: open("data.txt", "r")
+
+"r" mode opens a file for reading and is the default.
+Example: open("data.txt") is the same as open("data.txt", "r")
+
+"w" mode opens a file for writing and overwrites existing content.
+Example: open("data.txt", "w")
+
+"a" mode opens a file for appending without erasing content.
+Example: open("data.txt", "a")
+
+"x" mode creates a new file and fails if it already exists.
+Example: open("new.txt", "x")
+
+"b" mode opens a file in binary mode.
+Example: open("image.png", "rb")
+
+"r+" mode opens a file for both reading and writing.
+Example: open("data.txt", "r+")
+
+The .read() method reads the entire file as a string.
+Example: content = f.read()
+
+The .readline() method reads one line at a time.
+Example: line = f.readline()
+
+The .readlines() method returns all lines as a list.
+Example: lines = f.readlines()
+
+You can loop over a file object to read line by line.
+Example: for line in f: print(line)
+
+The .write() method writes a string to the file.
+Example: f.write("hello")
+
+The .writelines() method writes a list of strings.
+Example: f.writelines(["a\n", "b\n"])
+
+The .close() method closes the file and frees resources.
+Example: f.close()
+
+The with statement closes the file automatically.
+Example: with open("data.txt") as f: content = f.read()
+
+Always use with to avoid forgetting to close files.
+Example: with open("data.txt") as f: ...
+
+The .seek() method moves the file pointer to a position.
+Example: f.seek(0)
+
+The .tell() method returns the current file position.
+Example: f.tell() gives the byte offset
+
+The os.path.exists() function checks if a file exists.
+Example: import os; os.path.exists("data.txt")
+
+The os.remove() function deletes a file.
+Example: os.remove("data.txt")
+
+The os.rename() function renames or moves a file.
+Example: os.rename("old.txt", "new.txt")
+
+The os.mkdir() function creates a directory.
+Example: os.mkdir("new_folder")
+
+The os.makedirs() function creates nested directories.
+Example: os.makedirs("a/b/c")
+
+The os.listdir() function lists files in a directory.
+Example: os.listdir(".")
+
+The pathlib module provides an object-oriented path API.
+Example: from pathlib import Path; p = Path("data.txt")
+
+Path objects have methods like .exists(), .read_text().
+Example: Path("data.txt").read_text()
+
+Path objects can join paths with the / operator.
+Example: Path("folder") / "file.txt"
+
+The json module reads and writes JSON files.
+Example: import json; data = json.load(open("data.json"))
+
+json.load() reads JSON from a file object.
+Example: data = json.load(f)
+
+json.loads() reads JSON from a string.
+Example: data = json.loads('{"a": 1}')
+
+json.dump() writes JSON to a file object.
+Example: json.dump(data, f)
+
+json.dumps() converts a Python object to a JSON string.
+Example: json.dumps({"a": 1}) gives '{"a": 1}'
+
+json.dump() accepts indent for pretty printing.
+Example: json.dump(data, f, indent=2)
+
+The csv module reads and writes CSV files.
+Example: import csv
+
+csv.reader() reads rows as lists.
+Example: for row in csv.reader(f): print(row)
+
+csv.writer() writes rows from a list.
+Example: writer = csv.writer(f); writer.writerow(["a", "b"])
+
+csv.DictReader reads rows as dictionaries.
+Example: for row in csv.DictReader(f): print(row["name"])
+
+csv.DictWriter writes rows from dictionaries.
+Example: writer = csv.DictWriter(f, fieldnames=["name", "age"])
+
+Always specify encoding="utf-8" when reading text files.
+Example: open("data.txt", encoding="utf-8")
+
+Errors="ignore" skips characters that cannot be decoded.
+Example: open("data.txt", encoding="utf-8", errors="ignore")
+
+The shutil module copies and moves files and directories.
+Example: import shutil; shutil.copy("a.txt", "b.txt")
+
+shutil.rmtree() deletes an entire directory tree.
+Example: shutil.rmtree("old_folder")
+
+The tempfile module creates temporary files.
+Example: import tempfile; tempfile.NamedTemporaryFile()
+
+Always close files even if an error occurs.
+Example: with open("x") as f: ... handles this automatically
