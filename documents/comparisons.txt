@@ -62,4 +62,358 @@ A for loop works on lists, tuples, sets, and dictionaries.
 Example: for x in [1, 2, 3]: print(x)
 
 A while loop is best when the number of iterations is unknown.
+Example: while user_input != "quit": ...
 
+A for loop is best when iterating over a known sequence.
+Example: for item in items: ...
+
+A function returns a value; a method belongs to an object.
+Example: len(x) is a function; x.append(1) is a method
+
+A module is a Python file; a package is a folder of modules.
+Example: math is a module; numpy is a package
+
+A shallow copy copies the outer container only.
+Example: list.copy() is shallow
+
+A deep copy copies nested objects too.
+Example: copy.deepcopy(x) is deep
+
+A parameter is a name in the function definition.
+Example: def f(a): ... has parameter a
+
+An argument is a value passed to the function.
+Example: f(10) passes argument 10
+
+is compares identity, == compares equality.
+Example: [1] == [1] is True, but [1] is [1] is False
+
+The == operator checks if two values are equal.
+Example: 5 == 5 returns True
+
+The is operator checks if two variables point to the same object.
+Example: a = [1]; b = a; a is b returns True
+
+Use == for value comparison.
+Example: "abc" == "abc" returns True
+
+Use is for identity comparison, usually with None.
+Example: x is None is the recommended way
+
+is not is the opposite of is.
+Example: a is not b returns True if they are different objects
+
+The != operator checks if two values are not equal.
+Example: 5 != 3 returns True
+
+Interned small integers may have the same identity.
+Example: 5 is 5 returns True, but 1000 is 1000 may return False
+
+Never use is for numeric or string comparison.
+Example: x is 5 is wrong; use x == 5
+
+An iterator produces items; an iterable can be iterated.
+Example: lists are iterable; iter(list) gives an iterator
+
+A generator is a lazy iterator built with yield.
+Example: def g(): yield 1
+
+A list stores all items in memory.
+Example: [x for x in range(10**6)] uses ~8 MB
+
+A generator produces items on demand.
+Example: (x for x in range(10**6)) uses almost no memory
+
+json is a text format; a dict is a Python object.
+Example: json.dumps converts dict to JSON
+
+csv is a text format for tabular data.
+Example: rows separated by commas
+
+requests is for HTTP; aiohttp is for async HTTP.
+Example: requests.get() is sync; aiohttp is async
+
+A thread runs in the same process and shares memory.
+Example: import threading
+
+A process runs independently with its own memory.
+Example: import multiprocessing
+
+Async is best for I/O-bound tasks.
+Example: network calls
+
+Multiprocessing is best for CPU-bound tasks.
+Example: heavy computation
+
+A virtual environment isolates project dependencies.
+Example: python -m venv venv
+
+pip installs packages; pip freeze lists installed packages.
+Example: pip install requests; pip freeze
+
+UTF-8 is the recommended text encoding.
+Example: open("file.txt", encoding="utf-8")
+
+Binary mode is used for images and other non-text files.
+Example: open("image.png", "rb")
+
+A string is immutable; a list is mutable.
+Example: "abc"[0] = "x" raises an error; [1,2,3][0] = 10 works
+
+A list method like .append() modifies the list in place.
+Example: nums.append(4) changes nums
+
+A string method like .upper() returns a new string.
+Example: "abc".upper() returns "ABC", original unchanged
+
+A shallow copy shares nested objects with the original.
+Example: modifying a nested list affects both
+
+A deep copy creates independent nested objects.
+Example: modifying a nested list in the copy does not affect the original
+
+A for loop can have an else block; a while loop can too.
+Example: for x in range(3): ... else: ...
+
+A break statement skips the else block.
+Example: for x in range(3): break else: print("never")
+
+A return exits a function; yield pauses it.
+Example: return gives one value; yield gives many
+
+A class is a blueprint; an instance is a concrete object.
+Example: Dog is a class; my_dog = Dog() is an instance
+
+A class attribute is shared; an instance attribute is not.
+Example: Dog.species is shared; my_dog.name is per instance
+
+A static method takes no self; a class method takes cls.
+Example: @staticmethod vs @classmethod
+
+A property looks like an attribute but runs code.
+Example: @property def area(self): ...
+
+A method is bound to an instance; a function is not.
+Example: my_dog.bark() vs bark()
+
+A try block runs risky code; an except block handles errors.
+Example: try: x = int("a") except ValueError: ...
+
+A finally block always runs; an else block runs on success.
+Example: try: ... finally: ... vs try: ... else: ...
+
+A raise statement stops execution with an error.
+Example: raise ValueError("bad")
+
+A logging call records a message; a print sends it to stdout.
+Example: logging.info vs print
+
+A module is imported once and cached; a script runs every time.
+Example: import math vs python math_script.py
+
+A package uses __init__.py; a namespace package does not.
+Example: standard packages vs PEP 420 packages
+
+pip installs from PyPI; a local setup.py installs from a folder.
+Example: pip install requests vs pip install .
+
+A virtual environment is per project; system Python is global.
+Example: venv/ vs /usr/bin/python
+
+A .pyc file is compiled bytecode; a .py file is source code.
+Example: __pycache__/module.cpython-312.pyc
+
+A list comprehension is eager; a generator expression is lazy.
+Example: [x for x in nums] vs (x for x in nums)
+
+A for loop uses iteration; a while loop uses a condition.
+Example: for x in items vs while flag
+
+A function definition uses def; an anonymous function uses lambda.
+Example: def f(x): return x*2 vs f = lambda x: x*2
+
+A dict is keyed by hashable keys; a list is indexed by position.
+Example: d["name"] vs lst[0]
+
+A set lookup is O(1); a list lookup is O(n).
+Example: 5 in {1, 2, 3} is fast; 5 in [1, 2, 3] is slow
+
+A tuple can be a dict key; a list cannot.
+Example: {(1, 2): "a"} is valid; {[1, 2]: "a"} is not
+
+A frozenset is hashable; a set is not.
+Example: {frozenset([1, 2]): "a"} is valid
+
+A defaultdict returns a default; a regular dict raises KeyError.
+Example: from collections import defaultdict
+
+A Counter counts items; a regular dict requires manual counting.
+Example: from collections import Counter; Counter("aabbcc")
+
+A namedtuple has named fields; a regular tuple does not.
+Example: from collections import namedtuple
+
+A dataclass generates __init__ for you; a regular class does not.
+Example: @dataclass class Point: x: int; y: int
+
+A context manager uses with; a try/finally does it manually.
+Example: with open("f") as f: ... vs try: f = open("f") finally: f.close()
+
+A decorator wraps a function; a wrapper is what the decorator returns.
+Example: @deco def f(): ... means f = deco(f)
+
+A generator function uses yield; a coroutine uses await.
+Example: async def f(): await g()
+
+A thread is OS-managed; a coroutine is user-managed.
+Example: threading vs asyncio
+
+asyncio is single-threaded; threading uses multiple threads.
+Example: asyncio.run(main()) vs threading.Thread(target=...)
+
+A JSON file stores data as text; a pickle file stores Python objects.
+Example: json.dump vs pickle.dump
+
+A CSV file is human-readable; a parquet file is binary.
+Example: data.csv vs data.parquet
+
+A GET request retrieves data; a POST request sends data.
+Example: requests.get vs requests.post
+
+A 200 status means success; a 404 means not found.
+Example: r.status_code == 200
+
+A 4xx error is the client's fault; a 5xx error is the server's fault.
+Example: 404 vs 500
+
+A timeout prevents hanging; without one a request can wait forever.
+Example: requests.get(url, timeout=5)
+
+A regex match checks the start; a regex search checks anywhere.
+Example: re.match vs re.search
+
+A regex .+ is greedy; .+? is non-greedy.
+Example: r"<.+>" vs r"<.+?>"
+
+A raw string (r"...") keeps backslashes; a normal string escapes them.
+Example: r"\d" vs "\d"
+
+A list slice copies; a list view does not exist in Python.
+Example: nums[1:3] returns a new list
+
+A shallow copy of a nested list shares the inner list.
+Example: copy.copy
+
+A deep copy of a nested list creates new inner lists.
+Example: copy.deepcopy
+
+A function argument can be positional or keyword.
+Example: f(1, 2) vs f(a=1, b=2)
+
+*args collects extra positional arguments; **kwargs collects keyword arguments.
+Example: def f(*args, **kwargs): ...
+
+A local variable lives inside a function; a global variable lives at module level.
+Example: def f(): x = 1 vs x = 1 at top level
+
+The global keyword modifies a global from inside a function.
+Example: global x; x = 10
+
+A closure captures its enclosing scope's variables.
+Example: def outer(x): def inner(): return x
+
+A lambda cannot contain statements; a def can.
+Example: lambda x: x*2 vs def f(x): return x*2
+
+A list comprehension cannot have assignments; use walrus if needed.
+Example: [(y := f(x)) for x in nums]
+
+A dict comprehension maps keys to values; a set comprehension has no keys.
+Example: {k: v for ...} vs {x for ...}
+
+A generator expression has no len(); convert to list first.
+Example: len(list(x for x in nums))
+
+A range is lazy; a list of numbers is eager.
+Example: range(10**6) vs list(range(10**6))
+
+enumerate gives index and value; zip gives paired values.
+Example: enumerate(["a","b"]) vs zip([1,2], ["a","b"])
+
+sorted returns a new list; .sort() sorts in place.
+Example: sorted(nums) vs nums.sort()
+
+reversed returns an iterator; [::-1] returns a new list.
+Example: reversed(nums) vs nums[::-1]
+
+A file opened with "w" overwrites; "a" appends.
+Example: open("f", "w") vs open("f", "a")
+
+An integer division // returns a whole number; / returns a float.
+Example: 5 // 2 gives 2; 5 / 2 gives 2.5
+
+The % operator gives the remainder; // gives the quotient.
+Example: 5 % 2 gives 1; 5 // 2 gives 2
+
+A mutable default argument is a common bug.
+Example: def f(x=[]): is wrong; use None instead
+
+A function's default argument is evaluated once at definition.
+Example: the same list is reused across calls
+
+A string is indexed by character; a list by element.
+Example: "abc"[0] gives "a"; [1,2,3][0] gives 1
+
+A tuple is faster than a list for iteration.
+Example: tuples are slightly more efficient
+
+A tuple uses less memory than a list.
+Example: sys.getsizeof((1,2,3)) vs sys.getsizeof([1,2,3])
+
+A dict is ordered in Python 3.7+; a set is not.
+Example: {"b": 1, "a": 2} keeps order; {2, 1} does not
+
+A set is best for membership tests; a list is best for ordering.
+Example: "x" in my_set vs "x" in my_list
+
+A for loop variable persists after the loop.
+Example: after for i in range(3), i equals 2
+
+A while loop may never run; a for loop may never run too.
+Example: while False: ... vs for x in []: ...
+
+A try block must have except or finally.
+Example: try: ... except: ... or try: ... finally: ...
+
+A raise re-raises if given no arguments inside except.
+Example: except ValueError: raise
+
+An except block can name the exception with as.
+Example: except ValueError as e: print(e)
+
+A custom exception subclasses Exception.
+Example: class MyError(Exception): pass
+
+A finally block runs even after a return.
+Example: try: return 1 finally: print("bye")
+
+A with statement guarantees cleanup.
+Example: with open("f") as f: ...
+
+A decorator can take arguments; then it returns a decorator.
+Example: @deco(arg) means f = deco(arg)(f)
+
+A class method is often used as an alternate constructor.
+Example: @classmethod def from_string(cls, s): return cls(s)
+
+A static method is a plain function in the class namespace.
+Example: @staticmethod def is_valid(x): return x > 0
+
+A property getter has @property; a setter has @name.setter.
+Example: @property def x(self): return self._x
+
+A class attribute is looked up on the class; an instance attribute on the instance.
+Example: Dog.species vs my_dog.species
+
+A subclass can override a method; super() calls the parent version.
+Example: class Cat(Animal): def speak(self): return super().speak() + " meow"
