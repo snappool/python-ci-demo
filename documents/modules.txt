@@ -1,0 +1,134 @@
+A module is a Python file containing code you can reuse.
+Example: mymodule.py
+
+The import statement loads a module.
+Example: import math
+
+You access module contents with dot notation.
+Example: math.sqrt(16) gives 4.0
+
+The from ... import ... statement imports specific names.
+Example: from math import sqrt
+
+After from import, you use the name directly.
+Example: sqrt(16) gives 4.0
+
+You can import multiple names at once.
+Example: from math import sqrt, pi
+
+You can rename an import with the as keyword.
+Example: import numpy as np
+
+You can rename specific imports too.
+Example: from math import sqrt as square_root
+
+Importing with * brings in all public names and is discouraged.
+Example: from math import *
+
+The import statement runs the module's code the first time.
+Example: importing a module executes its top-level code
+
+A package is a folder of modules with an __init__.py file.
+Example: mypackage/__init__.py
+
+In Python 3.3 and later, __init__.py is optional (namespace packages).
+Example: a folder without __init__.py can still be a package
+
+A submodule is a module inside a package.
+Example: import mypackage.mymodule
+
+The __name__ variable is "__main__" when a file is run directly.
+Example: if __name__ == "__main__": main()
+
+The if __name__ == "__main__" guard prevents code from running on import.
+Example: it separates script behavior from module behavior
+
+The dir() function lists names in a module.
+Example: dir(math)
+
+The help() function shows a module's documentation.
+Example: help(math)
+
+The sys.path list determines where Python looks for modules.
+Example: import sys; sys.path
+
+You can add a folder to sys.path to import from it.
+Example: sys.path.append("/my/folder")
+
+Python looks for modules in the current directory first.
+Example: a local file overrides an installed package
+
+The __pycache__ folder stores compiled bytecode.
+Example: created automatically when you import a module
+
+A .pyc file is compiled bytecode and speeds up imports.
+Example: module.cpython-312.pyc
+
+pip is Python's package installer.
+Example: pip install requests
+
+pip installs from PyPI, the Python Package Index.
+Example: pip install flask
+
+You can install a specific version with ==.
+Example: pip install django==4.2
+
+pip install -r requirements.txt installs all listed packages.
+Example: pip install -r requirements.txt
+
+pip freeze lists installed packages and versions.
+Example: pip freeze > requirements.txt
+
+pip uninstall removes a package.
+Example: pip uninstall requests
+
+pip list shows installed packages.
+Example: pip list
+
+pip show displays details about a package.
+Example: pip show django
+
+A virtual environment isolates project dependencies.
+Example: python -m venv venv
+
+You activate a venv on Windows with source venv/Scripts/activate.
+Example: source venv/Scripts/activate
+
+You activate a venv on Linux or macOS with source venv/bin/activate.
+Example: source venv/bin/activate
+
+You deactivate a venv with the deactivate command.
+Example: deactivate
+
+Always use a virtual environment per project.
+Example: avoids conflicts between project dependencies
+
+The standard library is a set of modules included with Python.
+Example: os, sys, math, json, csv are all standard library modules
+
+The datetime module handles dates and times.
+Example: from datetime import datetime
+
+The random module generates random numbers.
+Example: import random; random.randint(1, 10)
+
+The collections module provides specialized containers.
+Example: from collections import Counter, defaultdict
+
+The itertools module provides tools for iteration.
+Example: from itertools import chain, product
+
+The functools module provides tools for functions.
+Example: from functools import lru_cache
+
+The re module provides regular expressions.
+Example: import re; re.findall(r"\d+", "a1b2")
+
+The subprocess module runs external commands.
+Example: import subprocess; subprocess.run(["ls", "-l"])
+
+The argparse module builds command-line interfaces.
+Example: import argparse
+
+The logging module records messages at different levels.
+Example: import logging; logging.info("started")
