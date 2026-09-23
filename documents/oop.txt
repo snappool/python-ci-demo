@@ -1,0 +1,128 @@
+A class is a blueprint for creating objects.
+Example: class Dog: pass
+
+An object is an instance of a class.
+Example: my_dog = Dog()
+
+The __init__ method runs automatically when an object is created.
+Example: class Dog: def __init__(self, name): self.name = name
+
+The self parameter refers to the current object.
+Example: def bark(self): return "Woof"
+
+You create an instance by calling the class like a function.
+Example: d = Dog("Rex")
+
+Instance attributes are stored on the object.
+Example: d.name gives "Rex"
+
+You can set attributes outside __init__.
+Example: d.age = 3
+
+Class attributes are shared by all instances.
+Example: class Dog: species = "Canis lupus"
+
+Accessing a class attribute through an instance works.
+Example: d.species gives "Canis lupus"
+
+A method is a function defined inside a class.
+Example: class Dog: def bark(self): return "Woof"
+
+You call a method on an instance.
+Example: d.bark() gives "Woof"
+
+Inheritance lets a class reuse another class's code.
+Example: class Puppy(Dog): pass
+
+The parent class is also called the superclass or base class.
+Example: in class Puppy(Dog), Dog is the parent
+
+The child class is also called the subclass or derived class.
+Example: Puppy is the child of Dog
+
+The super() function calls the parent class's methods.
+Example: super().__init__(name)
+
+A child class can override a parent method.
+Example: class Puppy(Dog): def bark(self): return "Yip"
+
+The isinstance() function checks an object's class.
+Example: isinstance(d, Dog) returns True
+
+The issubclass() function checks class inheritance.
+Example: issubclass(Puppy, Dog) returns True
+
+Multiple inheritance allows a class to inherit from several parents.
+Example: class C(A, B): pass
+
+The MRO (Method Resolution Order) decides which parent method runs.
+Example: C.__mro__ shows the lookup order
+
+A dunder method (magic method) has double underscores on both sides.
+Example: __init__, __str__, __repr__
+
+The __str__ method defines the human-readable string of an object.
+Example: def __str__(self): return f"Dog({self.name})"
+
+The __repr__ method defines the developer-facing string of an object.
+Example: def __repr__(self): return f"Dog({self.name!r})"
+
+The __len__ method lets len() work on your object.
+Example: def __len__(self): return len(self.items)
+
+The __eq__ method defines equality with ==.
+Example: def __eq__(self, other): return self.id == other.id
+
+The __lt__ method defines less-than comparison with <.
+Example: def __lt__(self, other): return self.age < other.age
+
+The __add__ method defines the + operator.
+Example: def __add__(self, other): return Vector(self.x + other.x)
+
+The __call__ method lets you call an instance like a function.
+Example: def __call__(self): return "called"
+
+The __getitem__ method lets you index your object.
+Example: def __getitem__(self, i): return self.items[i]
+
+The __iter__ method makes your object iterable.
+Example: def __iter__(self): return iter(self.items)
+
+A property lets you define getters and setters with @property.
+Example: @property def area(self): return self.w * self.h
+
+A setter is defined with @<name>.setter.
+Example: @area.setter def area(self, v): self._area = v
+
+A class method is defined with @classmethod and takes cls.
+Example: @classmethod def from_string(cls, s): ...
+
+A static method is defined with @staticmethod and takes no self or cls.
+Example: @staticmethod def is_valid(x): return x > 0
+
+Private attributes start with a single underscore by convention.
+Example: self._balance = 0
+
+Name-mangled attributes start with double underscores.
+Example: self.__secret is renamed to _ClassName__secret
+
+Abstract base classes are defined with the abc module.
+Example: from abc import ABC, abstractmethod
+
+An abstract method must be implemented by subclasses.
+Example: @abstractmethod def area(self): pass
+
+Dataclasses reduce boilerplate for simple classes.
+Example: from dataclasses import dataclass; @dataclass class Point: x: int; y: int
+
+Composition means one class contains another as an attribute.
+Example: class Car: def __init__(self): self.engine = Engine()
+
+Prefer composition over inheritance when possible.
+Example: a Car has an Engine, it is not an Engine
+
+The vars() function returns an object's __dict__.
+Example: vars(d) gives {'name': 'Rex'}
+
+The dir() function lists an object's attributes and methods.
+Example: dir(d) shows all available names
