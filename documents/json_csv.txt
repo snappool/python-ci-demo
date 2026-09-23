@@ -1,0 +1,18 @@
+JSON is a text format for storing and exchanging structured data.
+Example: {"name": "Ali", "age": 25, "active": true}
+
+The json module handles JSON in Python.
+Example: import json
+
+json.loads() parses a JSON string into a Python object.
+Example: json.loads('{"a": 1}') gives {"a": 1}
+
+json.load() reads JSON from a file object.
+Example: with open("data.json") as f: data = json.load(f)
+
+json.dumps() converts a Python object into a JSON string.
+Example: json.dumps({"a": 1}) gives '{"a": 1}'
+
+json.dump() writes JSON directly to a file object.
+Example: with open("out.json", "w") as f: json.dump(data, f)
+
