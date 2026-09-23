@@ -1,23 +1,116 @@
-A function in Python is defined with the def keyword.
+A function is defined with the def keyword.
 Example: def greet(name): return "Hello " + name
 
-Functions can have default arguments.
-Example: def greet(name="World"): return "Hello " + name
+A function is called by writing its name followed by parentheses.
+Example: greet("Ali") returns "Hello Ali"
 
-Functions can return multiple values as a tuple.
+A function can return a value with the return statement.
+Example: def add(a, b): return a + b
+
+A function without a return statement returns None.
+Example: def show(): print("hi") returns None
+
+You can return multiple values as a tuple.
 Example: def min_max(nums): return min(nums), max(nums)
 
-The *args parameter lets a function accept any number of positional arguments.
+Parameters are the names listed in the function definition.
+Example: in def greet(name), name is a parameter
+
+Arguments are the values passed when calling the function.
+Example: in greet("Ali"), "Ali" is an argument
+
+Positional arguments are matched by order.
+Example: def f(a, b): return a - b and f(10, 5) gives 5
+
+Keyword arguments are matched by name.
+Example: f(b=5, a=10) also gives 5
+
+Default parameter values make arguments optional.
+Example: def greet(name="World"): return "Hello " + name
+
+Parameters with defaults must come after parameters without.
+Example: def f(a, b=10): is valid, def f(a=10, b): is not
+
+The *args parameter accepts any number of positional arguments.
 Example: def total(*nums): return sum(nums)
 
-The **kwargs parameter lets a function accept any number of keyword arguments.
+Inside the function, *args is a tuple.
+Example: def f(*args): print(args) and f(1, 2, 3) prints (1, 2, 3)
+
+The **kwargs parameter accepts any number of keyword arguments.
 Example: def show(**data): print(data)
 
-A lambda is a small anonymous function defined in one line.
+Inside the function, **kwargs is a dictionary.
+Example: def f(**kwargs): print(kwargs) and f(a=1, b=2) prints {'a': 1, 'b': 2}
+
+You can mix positional, *args, keyword, and **kwargs in one function.
+Example: def f(a, *args, **kwargs): pass
+
+A lambda is a small anonymous function written in one line.
 Example: square = lambda x: x * x
 
-The map() function applies a function to every item in an iterable.
-Example: list(map(lambda x: x*2, [1,2,3])) gives [2, 4, 6]
+Lambdas are often used as arguments to other functions.
+Example: sorted([3, 1, 2], key=lambda x: -x)
+
+The map() function applies a function to every item.
+Example: list(map(lambda x: x*2, [1, 2, 3])) gives [2, 4, 6]
 
 The filter() function keeps items where the function returns True.
-Example: list(filter(lambda x: x > 2, [1,2,3,4])) gives [3, 4]
+Example: list(filter(lambda x: x > 2, [1, 2, 3, 4])) gives [3, 4]
+
+The reduce() function from functools combines items into one value.
+Example: from functools import reduce; reduce(lambda a, b: a + b, [1, 2, 3]) gives 6
+
+A function can call itself, which is called recursion.
+Example: def factorial(n): return 1 if n <= 1 else n * factorial(n - 1)
+
+Every recursive function needs a base case to stop.
+Example: if n <= 1: return 1 is the base case in factorial
+
+Python has a recursion depth limit (usually around 1000).
+Example: deep recursion raises RecursionError
+
+A docstring is a string at the start of a function that describes it.
+Example: def f(): """Adds two numbers."""
+
+You can read a function's docstring with __doc__.
+Example: print(f.__doc__)
+
+A variable inside a function is local by default.
+Example: def f(): x = 10 does not affect x outside
+
+The global keyword lets a function modify a global variable.
+Example: def f(): global x; x = 10
+
+A nested function is defined inside another function.
+Example: def outer(): def inner(): return 1
+
+A closure is a nested function that remembers values from its enclosing scope.
+Example: def outer(x): def inner(): return x; return inner
+
+A decorator is a function that wraps another function.
+Example: @my_decorator above def f(): ...
+
+A decorator uses the @ symbol.
+Example: @staticmethod and @classmethod are common decorators
+
+The functools.wraps decorator preserves the original function's metadata.
+Example: @functools.wraps(func) inside a decorator
+
+Functions are first-class objects and can be passed around.
+Example: def apply(f, x): return f(x)
+
+You can store functions in a list or dictionary.
+Example: ops = {"add": lambda a, b: a + b}
+
+Type hints describe expected types but are not enforced.
+Example: def add(a: int, b: int) -> int: return a + b
+
+The help() function shows a function's documentation.
+Example: help(print)
+
+A function's name can be accessed with __name__.
+Example: print(add.__name__) prints "add"
+
+The pass statement is used for empty function bodies.
+Example: def todo(): pass
