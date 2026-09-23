@@ -1,0 +1,59 @@
+A variable stores a value and is created with the = sign.
+Example: name = "Ali"
+
+Python has four main data types: int, float, str, and bool.
+Example: age = 25, price = 9.99, name = "Ali", is_active = True
+
+You can check the type of any value with the type() function.
+Example: type(25) returns <class 'int'>
+
+Strings are text and are written inside quotes.
+Example: greeting = "Hello"
+
+Integers are whole numbers without a decimal point.
+Example: count = 10
+
+Floats are numbers with a decimal point.
+Example: pi = 3.14
+
+Booleans represent True or False.
+Example: is_ready = False
+
+Arithmetic operators include +, -, *, /, //, %, and **.
+Example: 10 // 3 gives 3, 10 % 3 gives 1, 2 ** 3 gives 8
+
+Comparison operators include ==, !=, <, >, <=, and >=.
+Example: 5 > 3 returns True
+
+Logical operators are and, or, and not.
+Example: True and False returns False
+
+You can convert between types with int(), float(), str(), and bool().
+Example: int("25") returns 25
+
+Multiple variables can be assigned in one line.
+Example: x, y = 1, 2
+
+You can swap two variables without a temporary variable.
+Example: x, y = y, x
+
+The input() function reads text from the user.
+Example: name = input("Enter your name: ")
+
+The print() function displays output on the screen.
+Example: print("Hello, world")
+
+Comments start with the # symbol and are ignored by Python.
+Example: # This is a comment
+
+Multi-line comments use triple quotes.
+Example: """This is a multi-line comment"""
+
+A constant is a variable that should not change and is written in uppercase.
+Example: PI = 3.14159
+
+The None value represents the absence of a value.
+Example: result = None
+
+You can check if a value is None with the is keyword.
+Example: result is None returns True
