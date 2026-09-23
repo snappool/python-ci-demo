@@ -1,0 +1,128 @@
+A comprehension is a short way to build a collection in one line.
+Example: [x*2 for x in range(5)] gives [0, 2, 4, 6, 8]
+
+A list comprehension uses square brackets.
+Example: squares = [x**2 for x in range(10)]
+
+The basic form is [expression for item in iterable].
+Example: [x + 1 for x in [1, 2, 3]] gives [2, 3, 4]
+
+A list comprehension replaces a for loop with .append().
+Example: [x*2 for x in nums] replaces a loop
+
+You can add a condition with if.
+Example: [x for x in range(10) if x % 2 == 0]
+
+The if comes after the for clause.
+Example: [x for x in nums if x > 0]
+
+The condition filters which items are included.
+Example: [x for x in [1, -2, 3] if x > 0] gives [1, 3]
+
+You can combine if and else in the expression part.
+Example: ["even" if x % 2 == 0 else "odd" for x in range(4)]
+
+The if/else comes before the for clause.
+Example: [x if x > 0 else 0 for x in nums]
+
+You can use multiple for clauses.
+Example: [(x, y) for x in [1, 2] for y in ["a", "b"]]
+
+Nested for clauses behave like nested loops.
+Example: the outer loop runs first
+
+You can use multiple if conditions.
+Example: [x for x in range(20) if x % 2 == 0 if x % 3 == 0]
+
+Multiple ifs are equivalent to using and.
+Example: if x % 2 == 0 and x % 3 == 0
+
+A list comprehension creates a new list.
+Example: the original iterable is not modified
+
+Use a comprehension for simple transformations.
+Example: [s.upper() for s in words]
+
+Avoid comprehensions when the logic is complex.
+Example: use a regular for loop for multi-step logic
+
+A dict comprehension uses curly braces with key: value.
+Example: {x: x*x for x in range(5)}
+
+The form is {key_expr: value_expr for item in iterable}.
+Example: {k: len(k) for k in ["a", "bb", "ccc"]}
+
+A dict comprehension can include a condition.
+Example: {x: x*x for x in range(10) if x % 2 == 0}
+
+You can swap keys and values with a dict comprehension.
+Example: {v: k for k, v in d.items()}
+
+You can build a dict from two lists with zip().
+Example: {k: v for k, v in zip(keys, values)}
+
+A set comprehension uses curly braces without colons.
+Example: {x*2 for x in range(5)}
+
+A set comprehension removes duplicates automatically.
+Example: {x % 3 for x in range(10)} gives {0, 1, 2}
+
+A generator expression uses parentheses.
+Example: (x*2 for x in range(5))
+
+A generator expression does not build a list in memory.
+Example: it is lazy and produces items one at a time
+
+Use a generator expression for large data.
+Example: sum(x*x for x in range(10**6))
+
+You can pass a generator expression to sum(), max(), min(), any(), all().
+Example: sum(x for x in nums if x > 0)
+
+A generator expression is often faster than a list comprehension.
+Example: less memory, similar speed
+
+You cannot index or slice a generator expression.
+Example: (x for x in range(5))[0] raises an error
+
+Comprehensions have their own scope.
+Example: the loop variable does not leak outside in Python 3
+
+The loop variable in a comprehension is local to it.
+Example: after [x for x in range(3)], x is not defined
+
+Comprehensions can call functions.
+Example: [f(x) for x in nums]
+
+Comprehensions can use any iterable.
+Example: [c for c in "hello"]
+
+Comprehensions can use enumerate().
+Example: [i for i, v in enumerate(nums) if v > 0]
+
+Comprehensions can use zip().
+Example: [a + b for a, b in zip(list1, list2)]
+
+Comprehensions can use range() with a step.
+Example: [x for x in range(0, 10, 2)]
+
+Comprehensions are often faster than explicit loops.
+Example: Python optimizes them at the bytecode level
+
+Prefer readability over cleverness.
+Example: a clear for loop may be better than a dense comprehension
+
+A comprehension is an expression, not a statement.
+Example: it returns a value and can be assigned
+
+You can nest comprehensions inside comprehensions.
+Example: [[y for y in range(x)] for x in range(3)]
+
+Nested comprehensions build nested lists.
+Example: [[0, 1], [0, 1, 2]] from the example above
+
+Use walrus := inside a comprehension to reuse a computed value.
+Example: [y for x in nums if (y := f(x)) > 0]
+
+The walrus operator requires Python 3.8 or later.
+Example: available in all modern Python versions
