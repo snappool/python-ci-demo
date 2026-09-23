@@ -1,0 +1,19 @@
+The datetime module handles dates, times, and durations.
+Example: import datetime
+
+The date class represents a calendar date.
+Example: from datetime import date; d = date(2026, 9, 23)
+
+The time class represents a time of day.
+Example: from datetime import time; t = time(14, 30)
+
+The datetime class combines date and time.
+Example: from datetime import datetime; dt = datetime(2026, 9, 23, 14, 30)
+
+The timedelta class represents a duration.
+Example: from datetime import timedelta; td = timedelta(days=7)
+
+The .now() method returns the current local date and time.
+Example: datetime.now()
+
+
