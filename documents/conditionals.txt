@@ -1,0 +1,86 @@
+The if statement runs a block of code only when a condition is True.
+Example: if age >= 18: print("Adult")
+
+Indentation defines the block of code controlled by if.
+Example: the line after if must be indented with 4 spaces
+
+The else block runs when the if condition is False.
+Example: if x > 0: print("positive") else: print("not positive")
+
+The elif keyword checks another condition if the previous one was False.
+Example: if x > 0: print("positive") elif x < 0: print("negative")
+
+You can chain multiple elif blocks.
+Example: if score >= 90: grade = "A" elif score >= 80: grade = "B" elif score >= 70: grade = "C"
+
+The else block is optional.
+Example: if x > 0: print("positive") is valid without else
+
+Conditions use comparison operators: ==, !=, <, >, <=, >=.
+Example: if x == 10: print("ten")
+
+Conditions can combine with and, or, and not.
+Example: if x > 0 and x < 10: print("single digit positive")
+
+The and operator requires both conditions to be True.
+Example: True and False returns False
+
+The or operator requires at least one condition to be True.
+Example: True or False returns True
+
+The not operator reverses a boolean.
+Example: not True returns False
+
+Python evaluates conditions with short-circuit logic.
+Example: in a and b, if a is False, b is never checked
+
+Any non-zero number is truthy.
+Example: if 5: print("truthy")
+
+Zero, empty strings, empty lists, and None are falsy.
+Example: if []: print("never runs")
+
+A ternary expression writes an if-else in one line.
+Example: result = "adult" if age >= 18 else "minor"
+
+You can nest if statements inside other if statements.
+Example: if x > 0: if x > 10: print("big positive")
+
+The pass statement is a placeholder for empty blocks.
+Example: if x > 0: pass
+
+The match statement compares a value against patterns (Python 3.10+).
+Example: match command: case "start": print("starting")
+
+The match statement can have a default case with _.
+Example: case _: print("unknown command")
+
+Multiple patterns can be combined with |.
+Example: case "yes" | "y": print("confirmed")
+
+The match statement can capture values with a variable name.
+Example: case [x, y]: print(f"pair: {x}, {y}")
+
+Comparison operators can be chained.
+Example: if 0 < x < 10: print("single digit")
+
+The in operator checks membership in a sequence.
+Example: if "a" in "cat": print("found")
+
+The is operator checks identity, not equality.
+Example: if x is None: print("x is None")
+
+Prefer is None over == None for checking None.
+Example: if value is None: print("empty")
+
+Boolean values can be combined into complex expressions.
+Example: if (x > 0 and y > 0) or z == 0: print("condition met")
+
+Parentheses make complex conditions easier to read.
+Example: if (a or b) and c: print("clear grouping")
+
+The any() function returns True if any item is truthy.
+Example: any([0, 0, 1]) returns True
+
+The all() function returns True only if all items are truthy.
+Example: all([1, 1, 0]) returns False
