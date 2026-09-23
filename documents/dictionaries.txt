@@ -1,0 +1,81 @@
+A dictionary is a collection of key-value pairs written with curly braces.
+Example: person = {"name": "Ali", "age": 25}
+
+Keys must be unique and immutable (strings, numbers, or tuples).
+Example: d = {"a": 1, 1: "one", (0, 0): "origin"}
+
+Values can be any type.
+Example: d = {"nums": [1, 2, 3], "info": {"x": 1}}
+
+You can access a value by its key.
+Example: person["name"] gives "Ali"
+
+Accessing a missing key with [] raises a KeyError.
+Example: person["email"] raises an error
+
+The .get() method returns None or a default if the key is missing.
+Example: person.get("email") returns None
+Example: person.get("email", "not found") returns "not found"
+
+You can add or update a key with assignment.
+Example: person["email"] = "ali@example.com"
+
+The .update() method merges another dictionary into this one.
+Example: person.update({"age": 26})
+
+The del keyword removes a key-value pair.
+Example: del person["age"]
+
+The .pop() method removes a key and returns its value.
+Example: person.pop("name") gives "Ali"
+
+The .popitem() method removes and returns the last inserted pair.
+Example: person.popitem() gives ("age", 25)
+
+The .clear() method removes all items.
+Example: person.clear() empties the dictionary
+
+The in operator checks if a key exists.
+Example: "name" in person returns True
+
+The .keys() method returns all keys.
+Example: list(person.keys()) gives ["name", "age"]
+
+The .values() method returns all values.
+Example: list(person.values()) gives ["Ali", 25]
+
+The .items() method returns key-value pairs as tuples.
+Example: list(person.items()) gives [("name", "Ali"), ("age", 25)]
+
+You can loop over keys and values at the same time.
+Example: for k, v in person.items(): print(k, v)
+
+The len() function returns the number of key-value pairs.
+Example: len(person) gives 2
+
+A dictionary comprehension builds a dictionary in one line.
+Example: {x: x*x for x in range(5)} gives {0: 0, 1: 1, 2: 4, 3: 9, 4: 16}
+
+A dictionary comprehension can include a condition.
+Example: {x: x*x for x in range(10) if x % 2 == 0}
+
+Dictionaries preserve insertion order in Python 3.7 and later.
+Example: keys appear in the order they were added
+
+You can create a dictionary from two lists with zip().
+Example: dict(zip(["a", "b"], [1, 2])) gives {"a": 1, "b": 2}
+
+The .setdefault() method returns a key's value, inserting a default if missing.
+Example: person.setdefault("city", "Unknown")
+
+Nested dictionaries store dictionaries inside dictionaries.
+Example: data = {"user": {"name": "Ali", "age": 25}}
+
+You can access nested values with chained indexing.
+Example: data["user"]["name"] gives "Ali"
+
+The .copy() method creates a shallow copy.
+Example: new_dict = person.copy()
+
+Dictionaries are mutable, so they can be changed after creation.
+Example: person["age"] = 30 updates the value
