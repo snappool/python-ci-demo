@@ -1,0 +1,125 @@
+An iterable is any object you can loop over with a for loop.
+Example: lists, tuples, strings, and dictionaries are iterable
+
+An iterator is an object that produces items one at a time.
+Example: iter([1, 2, 3]) returns an iterator
+
+The iter() function returns an iterator from an iterable.
+Example: it = iter([1, 2, 3])
+
+The next() function returns the next item from an iterator.
+Example: next(it) gives 1
+
+Calling next() past the end raises StopIteration.
+Example: after 3 items, next(it) raises StopIteration
+
+A for loop calls iter() and next() automatically.
+Example: for x in [1, 2, 3]: print(x)
+
+You can write a for loop manually with iter() and next().
+Example: it = iter([1, 2]); next(it); next(it)
+
+A generator is a function that produces values lazily.
+Example: def gen(): yield 1
+
+The yield keyword pauses a function and returns a value.
+Example: def gen(): yield 1; yield 2
+
+Calling a generator function returns a generator object.
+Example: g = gen()
+
+You can loop over a generator.
+Example: for x in gen(): print(x)
+
+Generators remember their state between calls.
+Example: after yielding 1, the generator resumes at the next line
+
+Generators use less memory than lists for large sequences.
+Example: (x for x in range(10**9)) does not build a list
+
+A generator expression is a list comprehension with parentheses.
+Example: (x*2 for x in range(5))
+
+A generator can run forever.
+Example: def count(): i = 0; while True: yield i; i += 1
+
+A generator ends when it hits return or the function ends.
+Example: yield 1; return ends the generator
+
+You can send values into a generator with .send().
+Example: g.send(5) resumes the generator and returns the sent value
+
+The .close() method stops a generator.
+Example: g.close()
+
+The .throw() method raises an exception inside the generator.
+Example: g.throw(ValueError)
+
+Generators can be chained for pipeline processing.
+Example: gen2(gen1(data))
+
+The yield from statement delegates to another iterable.
+Example: def gen(): yield from [1, 2, 3]
+
+yield from is useful for flattening nested structures.
+Example: def flat(lst): for sub in lst: yield from sub
+
+The itertools module provides many iterator helpers.
+Example: import itertools
+
+itertools.count() yields an infinite counter.
+Example: itertools.count(10)
+
+itertools.cycle() repeats a sequence forever.
+Example: itertools.cycle("abc")
+
+itertools.repeat() repeats one value.
+Example: itertools.repeat(5, 3) gives 5, 5, 5
+
+itertools.chain() joins multiple iterables.
+Example: itertools.chain([1, 2], [3, 4])
+
+itertools.islice() slices an iterator.
+Example: itertools.islice(itertools.count(), 5)
+
+itertools.product() gives the Cartesian product.
+Example: itertools.product([1, 2], "ab")
+
+itertools.permutations() gives all orderings.
+Example: itertools.permutations([1, 2, 3], 2)
+
+itertools.combinations() gives all subsets.
+Example: itertools.combinations([1, 2, 3], 2)
+
+itertools.groupby() groups consecutive items.
+Example: itertools.groupby("aabbcc")
+
+The map() and filter() functions return iterators in Python 3.
+Example: map(lambda x: x*2, [1, 2, 3])
+
+The zip() function returns an iterator of tuples.
+Example: zip([1, 2], ["a", "b"])
+
+The enumerate() function returns an iterator of index-value pairs.
+Example: enumerate(["a", "b"])
+
+The reversed() function returns a reverse iterator.
+Example: reversed([1, 2, 3])
+
+The sorted() function returns a list, not an iterator.
+Example: sorted([3, 1, 2])
+
+A custom iterator class defines __iter__ and __next__.
+Example: class Counter: def __iter__(self): return self
+
+The __iter__ method must return the iterator object.
+Example: def __iter__(self): return self
+
+The __next__ method returns the next value or raises StopIteration.
+Example: def __next__(self): if done: raise StopIteration
+
+Iterators are exhausted after one full pass.
+Example: after a for loop, the iterator is empty
+
+Use iter() and list() to reset a consumed iterator from its source.
+Example: list(iter([1, 2, 3]))
