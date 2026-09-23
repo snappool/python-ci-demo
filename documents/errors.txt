@@ -1,0 +1,110 @@
+An exception is an error that happens while a program is running.
+Example: 10 / 0 raises ZeroDivisionError
+
+The try block contains code that might raise an exception.
+Example: try: x = int("abc")
+
+The except block handles the exception.
+Example: except ValueError: print("not a number")
+
+You can catch a specific exception type.
+Example: except ZeroDivisionError: print("cannot divide by zero")
+
+You can catch multiple exception types in one block.
+Example: except (ValueError, TypeError): print("bad input")
+
+You can use multiple except blocks for different errors.
+Example: except ValueError: ... except KeyError: ...
+
+The as keyword captures the exception object.
+Example: except ValueError as e: print(e)
+
+A bare except catches all exceptions and is discouraged.
+Example: except: pass hides real bugs
+
+The else block runs if no exception was raised.
+Example: try: x = 1 except: ... else: print("no error")
+
+The finally block always runs, whether or not an exception occurred.
+Example: try: ... finally: print("cleanup")
+
+finally is used to release resources like files or connections.
+Example: try: f = open("x") finally: f.close()
+
+The raise statement manually raises an exception.
+Example: raise ValueError("bad value")
+
+You can re-raise the current exception with a bare raise.
+Example: except ValueError: raise
+
+You can add context to an exception with raise ... from.
+Example: raise RuntimeError("failed") from original_error
+
+A custom exception is defined by subclassing Exception.
+Example: class MyError(Exception): pass
+
+Custom exceptions can carry extra data.
+Example: class MyError(Exception): def __init__(self, code): self.code = code
+
+Prefer specific exceptions over broad ones.
+Example: catch KeyError, not Exception, when dealing with dictionaries
+
+ZeroDivisionError is raised when dividing by zero.
+Example: 1 / 0 raises ZeroDivisionError
+
+ValueError is raised when a value has the right type but wrong content.
+Example: int("abc") raises ValueError
+
+TypeError is raised when an operation gets the wrong type.
+Example: "a" + 1 raises TypeError
+
+KeyError is raised when a dictionary key is missing.
+Example: {"a": 1}["b"] raises KeyError
+
+IndexError is raised when a list index is out of range.
+Example: [1, 2][5] raises IndexError
+
+AttributeError is raised when an attribute does not exist.
+Example: "abc".foo raises AttributeError
+
+NameError is raised when a variable is not defined.
+Example: print(undefined_var) raises NameError
+
+FileNotFoundError is raised when opening a missing file.
+Example: open("missing.txt") raises FileNotFoundError
+
+ImportError is raised when an import fails.
+Example: import not_a_module raises ModuleNotFoundError
+
+The assert statement checks a condition and raises AssertionError if False.
+Example: assert x > 0, "x must be positive"
+
+Asserts are for debugging, not for user input validation.
+Example: use if/raise for real validation
+
+You can chain try blocks for layered error handling.
+Example: outer try handles what inner try does not
+
+The traceback shows where the exception happened.
+Example: the last line of the traceback shows the error type and message
+
+The sys.exc_info() function returns the current exception details.
+Example: import sys; sys.exc_info()
+
+The warnings module issues warnings instead of errors.
+Example: import warnings; warnings.warn("deprecated")
+
+Logging errors is better than printing them.
+Example: import logging; logging.exception("failed")
+
+A context manager handles setup and cleanup automatically.
+Example: with open("f.txt") as f: data = f.read()
+
+A context manager is defined with __enter__ and __exit__.
+Example: class CM: def __enter__(self): ...; def __exit__(self, *args): ...
+
+The contextlib module makes creating context managers easier.
+Example: from contextlib import contextmanager
+
+A contextmanager uses a generator with a single yield.
+Example: @contextmanager def cm(): setup(); yield; cleanup()
