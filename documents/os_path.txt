@@ -1,0 +1,16 @@
+The os module provides functions for interacting with the operating system.
+Example: import os
+
+os.getcwd() returns the current working directory.
+Example: os.getcwd() gives "/home/user/project"
+
+os.chdir() changes the current working directory.
+Example: os.chdir("/tmp")
+
+os.listdir() lists files and folders in a directory.
+Example: os.listdir(".") gives all items in the current folder
+
+os.mkdir() creates a single directory.
+Example: os.mkdir("new_folder")
+
+
