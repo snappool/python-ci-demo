@@ -1,0 +1,51 @@
+The requests library makes HTTP requests in Python.
+Example: import requests
+
+Install requests with pip.
+Example: pip install requests
+
+requests.get() sends a GET request.
+Example: r = requests.get("https://api.github.com")
+
+The .status_code attribute holds the HTTP status code.
+Example: r.status_code gives 200 on success
+
+The .text attribute holds the response body as a string.
+Example: r.text
+
+The .content attribute holds the response body as bytes.
+Example: r.content
+
+The .json() method parses the response as JSON.
+Example: data = r.json()
+
+A status code of 200 means success.
+Example: if r.status_code == 200: ...
+
+A status code of 404 means not found.
+Example: r.status_code gives 404
+
+A status code of 500 means server error.
+Example: r.status_code gives 500
+
+Use .raise_for_status() to raise an error on bad status.
+Example: r.raise_for_status()
+
+Wrap requests in try/except to handle network errors.
+Example: try: r = requests.get(url) except requests.RequestException: ...
+
+You can pass query parameters with the params argument.
+Example: requests.get(url, params={"q": "python"})
+
+The params dictionary is URL-encoded automatically.
+Example: {"q": "python"} becomes ?q=python
+
+You can pass custom headers with the headers argument.
+Example: requests.get(url, headers={"User-Agent": "MyApp"})
+
+Headers are often used for authentication tokens.
+Example: headers={"Authorization": f"Bearer {token}"}
+
+requests.post() sends a POST request.
+Example: r = requests.post(url, json={"name": "Ali"})
+
