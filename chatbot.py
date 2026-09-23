@@ -13,21 +13,26 @@ def load_docs(folder="documents"):
                 docs[f] = file.read()
     return docs
 
-def retrieve(question, docs, lines=15):
+def retrieve(question, docs, lines=25):
     """Search across all files, return top matching lines with their source."""
-    stopwords = {"what", "is", "the", "a", "an", "how", "do", "i",
-                 "difference", "between", "and", "or", "to", "of",
-                 "in", "on", "for", "with", "can", "you", "me", "my"}
+    stopwords = {"what", "how", "the", "a", "an", "of", "to", "in",
+                 "on", "for", "with", "do", "i", "you", "me", "my"}
 
-    # Strip punctuation from each word
-    words = [
-        w.strip(string.punctuation)
-        for w in question.lower().split()
-    ]
-    words = [w for w in words if w not in stopwords and len(w) > 2]
+    raw = question.lower().split()
+    words = []
+    special = {"==", "!=", "<", ">", "<=", ">=", "is", "and", "or", "not"}
+
+    for w in raw:
+        raw_clean = w.rstrip("?").rstrip(".")
+        if raw_clean in special:
+            words.append(raw_clean)
+            continue
+        stripped = w.strip(string.punctuation)
+        if stripped and stripped not in stopwords:
+            words.append(stripped)
 
     if not words:
-        return "No relevant content found in the knowledge base."
+        words = raw
 
     results = []
     for filename, content in docs.items():
@@ -35,9 +40,19 @@ def retrieve(question, docs, lines=15):
             if not line.strip():
                 continue
             line_lower = line.lower()
-            unique_matches = sum(1 for word in words if word in line_lower)
-            if unique_matches > 0:
-                results.append((unique_matches, filename, line))
+            score = 0
+            matched_words = set()
+            for word in words:
+                if word in line_lower:
+                    matched_words.add(word)
+                    if word in special:
+                        score += 3
+                    else:
+                        score += 1
+            if len(matched_words) >= 2:
+                score += len(matched_words) * 5
+            if score > 0:
+                results.append((score, filename, line))
 
     results.sort(key=lambda x: x[0], reverse=True)
     top = results[:lines]
@@ -47,16 +62,13 @@ def retrieve(question, docs, lines=15):
 
     return "\n".join(f"[{fname}] {line}" for _, fname, line in top)
 
-# Load knowledge base
 docs = load_docs()
 
-# Set up Groq client
 client = OpenAI(
     base_url="https://api.groq.com/openai/v1",
     api_key=os.environ["GROQ_API_KEY"]
 )
 
-# Interactive loop
 while True:
     question = input("\nAsk about Python (or type 'exit'): ").strip()
     if not question:
