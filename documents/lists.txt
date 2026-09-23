@@ -1,0 +1,95 @@
+A list is an ordered collection of items written with square brackets.
+Example: nums = [1, 2, 3]
+
+A list can hold items of different types.
+Example: mixed = [1, "hello", True, 3.14]
+
+You can access an item by index, starting at 0.
+Example: nums[0] gives 1
+
+Negative indexes count from the end.
+Example: nums[-1] gives 3
+
+Slicing returns a new list from part of the original.
+Example: nums[1:3] gives [2, 3]
+
+The len() function returns the number of items.
+Example: len([1, 2, 3]) gives 3
+
+Lists are mutable, so you can change items.
+Example: nums[0] = 10 changes the first item
+
+The .append() method adds one item to the end.
+Example: nums.append(4) adds 4
+
+The .extend() method adds multiple items to the end.
+Example: nums.extend([4, 5]) adds 4 and 5
+
+The .insert() method adds an item at a specific index.
+Example: nums.insert(0, 99) adds 99 at the start
+
+The .remove() method removes the first matching item.
+Example: nums.remove(2) removes the value 2
+
+The .pop() method removes and returns an item by index.
+Example: nums.pop() removes the last item
+
+The del keyword removes an item by index.
+Example: del nums[0] removes the first item
+
+The .clear() method removes all items.
+Example: nums.clear() empties the list
+
+The .index() method returns the position of a value.
+Example: [10, 20, 30].index(20) gives 1
+
+The in operator checks if a value exists in the list.
+Example: 2 in [1, 2, 3] returns True
+
+The .count() method counts how many times a value appears.
+Example: [1, 2, 1].count(1) gives 2
+
+The .sort() method sorts the list in place.
+Example: nums.sort() sorts ascending
+
+The .sort(reverse=True) sorts in descending order.
+Example: nums.sort(reverse=True)
+
+The sorted() function returns a new sorted list.
+Example: sorted([3, 1, 2]) gives [1, 2, 3]
+
+The .reverse() method reverses the list in place.
+Example: nums.reverse()
+
+You can concatenate lists with the + operator.
+Example: [1, 2] + [3, 4] gives [1, 2, 3, 4]
+
+You can repeat a list with the * operator.
+Example: [0] * 3 gives [0, 0, 0]
+
+The min() and max() functions return the smallest and largest items.
+Example: min([3, 1, 2]) gives 1
+
+The sum() function adds all numbers in a list.
+Example: sum([1, 2, 3]) gives 6
+
+A list comprehension builds a list in one line.
+Example: [x * 2 for x in range(5)] gives [0, 2, 4, 6, 8]
+
+A list comprehension can include a condition.
+Example: [x for x in range(10) if x % 2 == 0] gives even numbers
+
+You can unpack a list into variables.
+Example: a, b, c = [1, 2, 3]
+
+The zip() function pairs items from two lists.
+Example: list(zip([1, 2], ["a", "b"])) gives [(1, "a"), (2, "b")]
+
+Nested lists are lists inside lists.
+Example: matrix = [[1, 2], [3, 4]]
+
+You can access nested items with double indexing.
+Example: matrix[0][1] gives 2
+
+The .copy() method creates a shallow copy.
+Example: new_list = nums.copy()

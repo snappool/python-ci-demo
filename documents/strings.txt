@@ -1,0 +1,58 @@
+A string is a sequence of characters enclosed in quotes.
+Example: text = "Hello, world"
+
+Strings can be written with single or double quotes.
+Example: 'Hello' and "Hello" are the same
+
+Triple quotes allow multi-line strings.
+Example: text = """Line one
+Line two"""
+
+You can join strings with the + operator.
+Example: "Hello" + " " + "World" gives "Hello World"
+
+You can repeat strings with the * operator.
+Example: "ab" * 3 gives "ababab"
+
+You can access a character by index, starting at 0.
+Example: "Python"[0] gives "P"
+
+Negative indexes count from the end.
+Example: "Python"[-1] gives "n"
+
+Slicing extracts a portion of a string.
+Example: "Python"[1:4] gives "yth"
+
+You can reverse a string with slicing.
+Example: "Python"[::-1] gives "nohtyP"
+
+The len() function returns the length of a string.
+Example: len("Python") gives 6
+
+Strings are immutable and cannot be changed after creation.
+Example: text = "abc" and text[0] = "x" raises an error
+
+The .upper() method converts a string to uppercase.
+Example: "hello".upper() gives "HELLO"
+
+The .lower() method converts a string to lowercase.
+Example: "HELLO".lower() gives "hello"
+
+The .title() method capitalizes the first letter of each word.
+Example: "hello world".title() gives "Hello World"
+
+The .strip() method removes whitespace from both ends.
+Example: "  hi  ".strip() gives "hi"
+
+The .split() method breaks a string into a list.
+Example: "a,b,c".split(",") gives ["a", "b", "c"]
+
+The .join() method combines a list into a string.
+Example: ",".join(["a", "b", "c"]) gives "a,b,c"
+
+The .replace() method replaces part of a string.
+Example: "hello".replace("l", "L") gives "heLLo"
+
+The .find() method returns the index of a substring, or -1 if not found.
+Example: "hello".find("l") gives 2
+
