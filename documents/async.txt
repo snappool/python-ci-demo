@@ -1,0 +1,14 @@
+Async programming lets Python handle many tasks at once without threads.
+Example: import asyncio
+
+The async keyword defines a coroutine function.
+Example: async def fetch(): return 1
+
+A coroutine is a function you can pause and resume.
+Example: async def main(): await fetch()
+
+The await keyword pauses the coroutine until the result is ready.
+Example: result = await fetch()
+
+You run a coroutine with asyncio.run().
+
