@@ -1,0 +1,65 @@
+A list is mutable, so you can change its items.
+Example: nums = [1, 2, 3]; nums[0] = 10
+
+A tuple is immutable, so you cannot change it after creation.
+Example: point = (1, 2); point[0] = 10 raises an error
+
+A list is written with square brackets.
+Example: [1, 2, 3]
+
+A tuple is written with parentheses.
+Example: (1, 2, 3)
+
+A list allows duplicates.
+Example: [1, 2, 2, 3] is valid
+
+A set does not allow duplicates.
+Example: {1, 2, 2, 3} becomes {1, 2, 3}
+
+A set is unordered and written with curly braces.
+Example: {1, 2, 3}
+
+A set is mutable but its items must be immutable.
+Example: {1, 2, 3} is valid, {[1, 2]} raises an error
+
+A list supports indexing and slicing.
+Example: [1, 2, 3][0] gives 1
+
+A set does not support indexing or slicing.
+Example: {1, 2, 3}[0] raises an error
+
+A list is ordered, so items keep their position.
+Example: [3, 1, 2] keeps that order
+
+A set is unordered, so items have no guaranteed position.
+Example: {3, 1, 2} may appear in any order
+
+Use a list when order matters and duplicates are allowed.
+Example: a shopping list
+
+Use a set when you need unique items and fast membership checks.
+Example: removing duplicates from a list
+
+Use a tuple when the data should not change.
+Example: coordinates, RGB values
+
+Use a dictionary when you need key-value lookups.
+Example: a phone book
+
+A list comprehension builds a list.
+Example: [x*2 for x in range(5)]
+
+A set comprehension builds a set.
+Example: {x*2 for x in range(5)}
+
+A dict comprehension builds a dictionary.
+Example: {x: x*2 for x in range(5)}
+
+A generator expression builds a generator, not a list.
+Example: (x*2 for x in range(5))
+
+A for loop works on lists, tuples, sets, and dictionaries.
+Example: for x in [1, 2, 3]: print(x)
+
+A while loop is best when the number of iterations is unknown.
+
