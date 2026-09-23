@@ -1,0 +1,89 @@
+A for loop repeats a block of code for each item in a sequence.
+Example: for x in [1, 2, 3]: print(x)
+
+The range() function generates a sequence of numbers.
+Example: for i in range(5): print(i) prints 0 to 4
+
+range(start, stop) starts at start and stops before stop.
+Example: range(2, 6) gives 2, 3, 4, 5
+
+range(start, stop, step) adds a step between numbers.
+Example: range(0, 10, 2) gives 0, 2, 4, 6, 8
+
+A while loop repeats as long as a condition is True.
+Example: while x < 5: x += 1
+
+A while loop can run forever if the condition never becomes False.
+Example: while True: print("infinite")
+
+The break statement exits the loop immediately.
+Example: for x in range(10): if x == 5: break
+
+The continue statement skips the rest of the current iteration.
+Example: for x in range(5): if x == 2: continue
+
+The else block after a loop runs if the loop finished normally.
+Example: for x in range(3): print(x) else: print("done")
+
+The else block is skipped if break was used.
+Example: for x in range(3): break else: print("never runs")
+
+The enumerate() function gives index and value together.
+Example: for i, v in enumerate(["a", "b"]): print(i, v)
+
+The zip() function loops over two sequences at once.
+Example: for a, b in zip([1, 2], ["x", "y"]): print(a, b)
+
+You can loop over a dictionary's keys directly.
+Example: for k in {"a": 1, "b": 2}: print(k)
+
+Use .items() to loop over key-value pairs.
+Example: for k, v in d.items(): print(k, v)
+
+You can loop over a string character by character.
+Example: for ch in "abc": print(ch)
+
+The reversed() function loops in reverse order.
+Example: for x in reversed([1, 2, 3]): print(x)
+
+The sorted() function loops over a sorted copy.
+Example: for x in sorted([3, 1, 2]): print(x)
+
+A loop variable persists after the loop ends.
+Example: after for i in range(3), i equals 2
+
+Nested loops run the inner loop fully for each outer iteration.
+Example: for i in range(2): for j in range(2): print(i, j)
+
+The pass statement is used when a loop body is empty.
+Example: for x in range(3): pass
+
+You can use _ as a throwaway loop variable.
+Example: for _ in range(3): print("hi")
+
+A loop can be written as a list comprehension for simple cases.
+Example: [x*2 for x in range(5)]
+
+The break statement only exits the innermost loop.
+Example: in nested loops, break affects only the inner one
+
+You can use a flag variable to break out of nested loops.
+Example: found = False then set to True inside, check in outer loop
+
+The continue statement works in both for and while loops.
+Example: while x < 10: x += 1; if x % 2: continue
+
+A while loop is best when the number of iterations is unknown.
+Example: while user_input != "quit": user_input = input()
+
+A for loop is best when iterating over a known sequence.
+Example: for item in items: process(item)
+
+The range() function is memory-efficient in Python 3.
+Example: range(1000000) does not create a list
+
+You can combine range() with len() to loop by index.
+Example: for i in range(len(items)): print(items[i])
+
+The itertools module provides advanced looping tools.
+Example: from itertools import count; for x in count(): print(x)
